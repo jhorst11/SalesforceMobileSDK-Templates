@@ -1,123 +1,34 @@
-[ 
+[
     {
-
         "path": "iOSNativeSwiftTemplate",
         "description": "Swift application using MobileSync, SwiftUI and Combine",
         "appType": "native_swift",
-        "platforms": ["ios"]
-    },
-    {
-
-        "path": "iOSNativeSwiftPackageManagerTemplate",
-        "description": "Swift application using MobileSync, SwiftUI and Combine (pulled in using Swift Package Manager)",
-        "appType": "native_swift",
-        "platforms": ["ios"]
-    },
-    {
-        "path": "iOSNativeSwiftEncryptedNotificationTemplate",
-        "description": "Basic Swift application with notification service extension",
-        "appType": "native_swift",
-        "platforms": ["ios"]
-    },
-    {
-
-        "path": "iOSNativeTemplate",
-        "description": "Basic Objective-C application",
-        "appType": "native",
-        "platforms": ["ios"]
+        "platforms": [
+            "ios"
+        ]
     },
     {
         "path": "AndroidNativeKotlinTemplate",
         "description": "Basic Kotlin application",
         "appType": "native_kotlin",
-        "platforms": ["android"]
+        "platforms": [
+            "android"
+        ]
     },
     {
-        "path": "AndroidNativeLoginTemplate",
-        "description": "Sample application with a native login screen created with Jetpack Compose",
-        "appType": "native_kotlin",
-        "platforms": ["android"]
-    },
-    {
-        "path": "AndroidNativeTemplate",
-        "description": "Basic Java application",
-        "appType": "native",
-        "platforms": ["android"]
-    },
-    {
-
-        "path": "HybridLocalTemplate",
-        "description": "Basic hybrid local application",
-        "appType": "hybrid_local",
-        "platforms": ["android", "ios"]
-    },
-    {
-
-        "path": "HybridRemoteTemplate",
-        "description": "Basic hybrid remote application",
-        "appType": "hybrid_remote",
-        "platforms": ["android", "ios"]
-    },
-    {
-
-        "path": "ReactNativeTemplate",
-        "description": "Basic React Native application",
-        "appType": "react_native",
-        "platforms": ["android", "ios"]
-    },
-    {
-
-        "path": "ReactNativeDeferredTemplate",
-        "description": "Basic React Native application that uses deferred login",
-        "appType": "react_native",
-        "platforms": ["android", "ios"]
-    },
-    {
-
-        "path": "ReactNativeTypeScriptTemplate",
-        "description": "Basic React Native application written in TypeScript",
-        "appType": "react_native",
-        "platforms": ["android", "ios"]
-    },
-    {
-        "path": "AndroidIDPTemplate",
-        "description": "Sample Kotlin Identity Provider application",
-        "appType": "native_kotlin",
-        "platforms": ["android"]
-    },
-    {
-
-        "path": "iOSIDPTemplate",
-        "description": "Sample Swift Identity Provider application",
-        "appType": "native_swift",
-        "platforms": ["ios"]
-    },
-    {
-
         "path": "MobileSyncExplorerSwift",
         "description": "Sample Swift application using MobileSync data framework",
         "appType": "native_swift",
-        "platforms": ["ios"]
+        "platforms": [
+            "ios"
+        ]
     },
     {
-
-        "path": "MobileSyncExplorerReactNative",
-        "description": "Sample application using MobileSync data framework",
-        "appType": "react_native",
-        "platforms": ["android", "ios"]
-    },
-    {
-
         "path": "MobileSyncExplorerKotlinTemplate",
         "description": "Sample Kotlin application using MobileSync data framework",
         "appType": "native_kotlin",
-        "platforms": ["android"]
-    },
-    {
-
-        "path": "iOSNativeLoginTemplate",
-        "description": "Sample application with a native login screen written in SwiftUI.",
-        "appType": "native_swift",
-        "platforms": ["ios"]
-    }    
+        "platforms": [
+            "android"
+        ]
+    }
 ]
