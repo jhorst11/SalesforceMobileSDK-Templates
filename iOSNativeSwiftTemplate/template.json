@@ -1,6 +1,5 @@
 {
   "$schema": "../template-schema.json",
-  "templateId": "ios-native-swift-template",
   "version": "0.0.1",
   "platform": "ios",
   "displayName": "iOS Native Swift Template",

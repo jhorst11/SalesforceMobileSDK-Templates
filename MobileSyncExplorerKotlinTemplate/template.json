@@ -1,6 +1,5 @@
 {
   "$schema": "../template-schema.json",
-  "templateId": "mobilesync-explorer-kotlin-template",
   "version": "0.0.1",
   "platform": "android",
   "displayName": "MobileSync Explorer Kotlin Template",

@@ -1,6 +1,5 @@
 {
   "$schema": "../template-schema.json",
-  "templateId": "mobilesync-explorer-swift",
   "version": "0.0.1",
   "platform": "ios",
   "displayName": "MobileSync Explorer Swift",

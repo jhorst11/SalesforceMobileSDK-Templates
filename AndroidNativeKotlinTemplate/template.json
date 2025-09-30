@@ -1,6 +1,5 @@
 {
   "$schema": "../template-schema.json",
-  "templateId": "android-native-kotlin-template",
   "version": "0.0.1",
   "platform": "android",
   "displayName": "Android Native Kotlin Template",

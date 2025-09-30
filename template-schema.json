@@ -1,19 +1,26 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "required": ["templateId", "version", "platform", "displayName", "description", "features", "complexity", "useCase"],
+  "required": [
+    "version",
+    "platform",
+    "displayName",
+    "description",
+    "features",
+    "complexity",
+    "useCase"
+  ],
   "properties": {
-    "templateId": {
-      "type": "string",
-      "description": "Unique identifier for the template (e.g., 'salesforce-record-list-ios')"
-    },
     "version": {
       "type": "string",
       "description": "Template version (e.g., '1.0.0')"
     },
     "platform": {
       "type": "string",
-      "enum": ["ios", "android"],
+      "enum": [
+        "ios",
+        "android"
+      ],
       "description": "Target platform for the template"
     },
     "displayName": {
@@ -37,14 +44,23 @@
     },
     "complexity": {
       "type": "string",
-      "enum": ["simple", "moderate", "advanced"],
+      "enum": [
+        "simple",
+        "moderate",
+        "advanced"
+      ],
       "description": "Relative complexity level for LLM adaptation and user understanding"
     },
     "customizationPoints": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["feature", "description", "files", "instructions"],
+        "required": [
+          "feature",
+          "description",
+          "files",
+          "instructions"
+        ],
         "properties": {
           "feature": {
             "type": "string",
