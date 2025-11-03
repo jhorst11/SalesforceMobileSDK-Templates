@@ -87,6 +87,77 @@
         }
       },
       "description": "Key points where the template can be adapted for different use cases"
+    },
+    "templatePrerequisites": {
+      "type": "object",
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "step"
+            ],
+            "properties": {
+              "step": {
+                "type": "string",
+                "description": "Description of the prerequisite step to perform before cloning"
+              },
+              "required": {
+                "type": "boolean",
+                "description": "Whether this step is required before cloning (default: true)",
+                "default": true
+              }
+            }
+          },
+          "description": "List of prerequisite steps to perform before cloning the template"
+        },
+        "templateProperties": {
+          "type": "object",
+          "description": "Properties to inject into the template at clone time. Each property can be a simple value (optional) or an object with value, required flag, and description.",
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": [
+                  "string",
+                  "number",
+                  "boolean",
+                  "object",
+                  "array"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "description": "The value for this property",
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean",
+                      "object",
+                      "array"
+                    ]
+                  },
+                  "required": {
+                    "type": "boolean",
+                    "description": "Whether this property is required (default: false)",
+                    "default": false
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Description of what this property is used for"
+                  }
+                },
+                "required": [
+                  "value"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "description": "Prerequisite steps and template properties required before cloning the template"
     }
   }
 }
