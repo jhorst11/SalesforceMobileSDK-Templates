@@ -97,6 +97,11 @@
       "properties": {
         "templateProperties": {
           "properties": {
+            "agentID": {
+              "value": "",
+              "required": true,
+              "description": "Agent ID from your enhanced in-app chat deployment configuration"
+            },
             "developerName": {
               "value": "",
               "required": true,
