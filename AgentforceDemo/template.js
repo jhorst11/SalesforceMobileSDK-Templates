@@ -41,9 +41,10 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
     var templateOrganization = 'AgentforceDemoOrganizationName';
 
     // Template properties for enhanced in-app chat deployment
-    var templateDeveloperName = 'Banana_Support';
-    var templateOrganizationID = '00Dbm00000VkVF3';
-    var templateApiURL = 'https://dbm00000vkvf3ean-dev-ed.develop.my.salesforce-scrt.com';
+    var templateAgentID = '[PLACEHOLDER_AGENT_ID]';
+    var templateDeveloperName = '[PLACEHOLDER_ES_DEVELOPER_NAME]';
+    var templateOrganizationID = '[PLACEHOLDER_ORGANIZATION_ID]';
+    var templateApiURL = '[PLACEHOLDER_API_URL]';
 
     // Key files
     var templatePodfile = 'Podfile';
@@ -97,6 +98,12 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
         if (apiURL) {
             replaceInFiles('"' + templateApiURL + '"', '"' + apiURL + '"', [templateSettingsFile]);
             replaceInFiles(templateApiURL, apiURL, [templateSettingsFile]);
+        }
+
+        var agentID = getTemplatePropertyValue(templateProperties.agentID);
+        if (agentID) {
+            replaceInFiles('"' + templateAgentID + '"', '"' + agentID + '"', [templateSettingsFile]);
+            replaceInFiles(templateAgentID, agentID, [templateSettingsFile]);
         }
     }
 

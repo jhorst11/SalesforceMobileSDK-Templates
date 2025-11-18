@@ -34,11 +34,11 @@ import Combine
     static let urlKey = "sfapURL"
     static let tenantIdKey = "tenantId"
     static let targetRegionKey = "targetRegion"
-    static let defaultAgentId = "0XxEE0000001csr0AA"
+    static let defaultAgentId = "[PLACEHOLDER_AGENT_ID]"
     
-    static let esDeveloperName = "Banana_Support"
-    static let organizationID = "00Dbm00000VkVF3"
-    static let apiURL = "https://dbm00000vkvf3ean-dev-ed.develop.my.salesforce-scrt.com"
+    static let esDeveloperName = "[PLACEHOLDER_ES_DEVELOPER_NAME]"
+    static let organizationID = "[PLACEHOLDER_ORGANIZATION_ID]"
+    static let apiURL = "[PLACEHOLDER_API_URL]"
     
     /// Unique identifier for the Agentforce agent
     var agentId: String

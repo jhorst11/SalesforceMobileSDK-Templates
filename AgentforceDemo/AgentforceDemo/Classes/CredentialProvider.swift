@@ -79,6 +79,6 @@ class CredentialProvider: AgentforceAuthCredentialProviding {
      * typically be called from the main thread for consistency with UI operations.
      */
     func getAuthCredentials() -> AgentforceService.AgentforceAuthCredentials {
-        return AgentforceAuthCredentials.Guest(url: "https://usa12coverage.demo.my.site.com/McLaren2")
+        return AgentforceAuthCredentials.Guest(url: "https://unused.url")
     }
 }

@@ -91,5 +91,30 @@
         "description": "API URL from your enhanced in-app chat deployment configuration"
       }
     }
+  },
+  "properties": {
+    "templatePrerequisites": {
+      "properties": {
+        "templateProperties": {
+          "properties": {
+            "developerName": {
+              "value": "",
+              "required": true,
+              "description": "ES developer name from your enhanced in-app chat deployment configuration"
+            },
+            "organizationId": {
+              "value": "",
+              "required": true,
+              "description": "Organization ID from your enhanced in-app chat deployment configuration"
+            },
+            "apiURL": {
+              "value": "",
+              "required": true,
+              "description": "API URL from your enhanced in-app chat deployment configuration"
+            }
+          }
+        }
+      }
+    }
   }
 }
