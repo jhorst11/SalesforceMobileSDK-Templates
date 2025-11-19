@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-present, salesforce.com, inc.
+ * Copyright (c) 2019-present, salesforce.com, inc.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted provided
@@ -36,19 +36,24 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
     var path = require('path');
 
     // Values in template
-    var templateAppName = 'MobileSyncExplorerSwift';
-    var templatePackageName = 'com.salesforce.mobilesdk';
-    var templateOrganization = 'MobileSyncExplorerSwiftOrganizationName';
+    var templateAppName = 'AgentforceDemo';
+    var templatePackageName = 'com.salesforce.AgentforceDemo';
+    var templateOrganization = 'AgentforceDemoOrganizationName';
+
+    // Template properties for enhanced in-app chat deployment
+    var templateAgentID = 'PLACEHOLDER_AGENT_ID';
+    var templateDeveloperName = 'PLACEHOLDER_ES_DEVELOPER_NAME';
+    var templateOrganizationID = 'PLACEHOLDER_ORGANIZATION_ID';
+    var templateApiURL = 'PLACEHOLDER_API_URL';
 
     // Key files
     var templatePodfile = 'Podfile';
-    var templatePackageJsonFile = 'package.json';
     var templateProjectDir = templateAppName + '.xcodeproj';
     var templateProjectFile = path.join(templateProjectDir, 'project.pbxproj');
+    var templatePackageJsonFile = 'package.json';
     var templateSchemeFile = path.join(templateAppName + '.xcodeproj', 'xcshareddata', 'xcschemes', templateAppName + '.xcscheme');
     var templateEntitlementsFile = path.join(templateAppName, templateAppName + '.entitlements');
-    var templateBootconfigFile = path.join(templateAppName, 'bootconfig.plist');
-    var templateInfoFile = path.join(templateAppName, 'Info.plist');
+    var templateSettingsFile = path.join(templateAppName, 'Classes', 'Settings.swift');
 
     //
     // Replace in files
@@ -58,24 +63,46 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
     replaceInFiles(templateAppName, config.appname, [templatePodfile, templatePackageJsonFile, templateProjectFile, templateSchemeFile, templateEntitlementsFile]);
 
     // package name
-    replaceInFiles(templatePackageName, config.packagename, [templateEntitlementsFile, templateProjectFile]);
+    replaceInFiles(templatePackageName, config.packagename, [templateProjectFile, templateEntitlementsFile]);
 
     // org name
     replaceInFiles(templateOrganization, config.organization, [templateProjectFile]);
 
-    // consumer key
-    if (config.consumerkey && config.consumerkey !== '') {
-        replaceInFiles('__INSERT_CONSUMER_KEY_HERE__', config.consumerkey, [templateBootconfigFile]);
+    // Enhanced in-app chat deployment properties
+    // Helper function to extract value from either simple value or metadata object
+    function getTemplatePropertyValue(prop) {
+        if (!prop) return null;
+        return typeof prop === 'object' && prop.value !== undefined ? prop.value : prop;
     }
 
-    // callback URL
-    if (config.callbackurl && config.callbackurl !== '') {
-        replaceInFiles('__INSERT_CALLBACK_URL_HERE__', config.callbackurl, [templateBootconfigFile]);
-    }
+    // Extract template properties from config
+    // Supports: config.templateProperties or config.templatePrerequisites.templateProperties
+    var templateProperties = config.templateProperties ||
+        (config.templatePrerequisites && config.templatePrerequisites.templateProperties);
 
-    // login server
-    var loginServer = (config.loginserver && config.loginserver !== '') ? config.loginserver.replace(/^https?:\/\//, '') : 'login.salesforce.com';
-    replaceInFiles('__INSERT_DEFAULT_LOGIN_SERVER__', loginServer, [templateInfoFile]);
+    // Inject template properties into Settings.swift
+    if (templateProperties) {
+        debugger;
+        var developerName = getTemplatePropertyValue(templateProperties.developerName);
+        if (developerName) {
+            replaceInFiles(templateDeveloperName, developerName, [templateSettingsFile]);
+        }
+
+        var organizationId = getTemplatePropertyValue(templateProperties.organizationId);
+        if (organizationId) {
+            replaceInFiles(templateOrganizationID, organizationId, [templateSettingsFile]);
+        }
+
+        var apiURL = getTemplatePropertyValue(templateProperties.apiURL);
+        if (apiURL) {
+            replaceInFiles(templateApiURL, apiURL, [templateSettingsFile]);
+        }
+
+        var agentID = getTemplatePropertyValue(templateProperties.agentID);
+        if (agentID) {
+            replaceInFiles(templateAgentID, agentID, [templateSettingsFile]);
+        }
+    }
 
     //
     // Rename/move files
@@ -95,6 +122,7 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
         workspacePath: config.appname + ".xcworkspace",
         bootconfigFile: path.join(config.appname, 'bootconfig.plist')
     };
+
 }
 
 //
