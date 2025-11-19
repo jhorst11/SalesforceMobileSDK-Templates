@@ -41,10 +41,10 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
     var templateOrganization = 'AgentforceDemoOrganizationName';
 
     // Template properties for enhanced in-app chat deployment
-    var templateAgentID = '[PLACEHOLDER_AGENT_ID]';
-    var templateDeveloperName = '[PLACEHOLDER_ES_DEVELOPER_NAME]';
-    var templateOrganizationID = '[PLACEHOLDER_ORGANIZATION_ID]';
-    var templateApiURL = '[PLACEHOLDER_API_URL]';
+    var templateAgentID = 'PLACEHOLDER_AGENT_ID';
+    var templateDeveloperName = 'PLACEHOLDER_ES_DEVELOPER_NAME';
+    var templateOrganizationID = 'PLACEHOLDER_ORGANIZATION_ID';
+    var templateApiURL = 'PLACEHOLDER_API_URL';
 
     // Key files
     var templatePodfile = 'Podfile';
@@ -82,27 +82,24 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
 
     // Inject template properties into Settings.swift
     if (templateProperties) {
+        debugger;
         var developerName = getTemplatePropertyValue(templateProperties.developerName);
         if (developerName) {
-            replaceInFiles('"' + templateDeveloperName + '"', '"' + developerName + '"', [templateSettingsFile]);
             replaceInFiles(templateDeveloperName, developerName, [templateSettingsFile]);
         }
 
         var organizationId = getTemplatePropertyValue(templateProperties.organizationId);
         if (organizationId) {
-            replaceInFiles('"' + templateOrganizationID + '"', '"' + organizationId + '"', [templateSettingsFile]);
             replaceInFiles(templateOrganizationID, organizationId, [templateSettingsFile]);
         }
 
         var apiURL = getTemplatePropertyValue(templateProperties.apiURL);
         if (apiURL) {
-            replaceInFiles('"' + templateApiURL + '"', '"' + apiURL + '"', [templateSettingsFile]);
             replaceInFiles(templateApiURL, apiURL, [templateSettingsFile]);
         }
 
         var agentID = getTemplatePropertyValue(templateProperties.agentID);
         if (agentID) {
-            replaceInFiles('"' + templateAgentID + '"', '"' + agentID + '"', [templateSettingsFile]);
             replaceInFiles(templateAgentID, agentID, [templateSettingsFile]);
         }
     }
