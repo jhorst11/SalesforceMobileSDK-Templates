@@ -66,11 +66,11 @@
   "templatePrerequisites": {
     "steps": [
       {
-        "step": "Configure an enhanced in-app chat deployment for mobile. Follow the instructions at: https://help.salesforce.com/s/articleView?id=service.miaw_deployment_mobile.htm&type=5",
+        "step": "Discover your agent ID by navigating in Setup -> Quick Find 'Agentforce Agents' -> Select the agent -> Copy the Agent ID from the URL (eg. <instance_url>/lightning/setup/EinsteinCopilot/<AGENT_ID>/edit",
         "required": true
       },
       {
-        "step": "Prepare the config.json file as described in the Salesforce documentation. This file should contain the ES developer name, organization ID, and API URL for your chat deployment.",
+        "step": "If an enhanced in-app chat deployment is configured, extract the ES developer name, organization ID, and API URL from the deployment configuration by navigating in Setup -> Quick Find 'Embedded Service Deployments' -> Select the deployment -> Mobile Configuration -> Click 'Get Code File'",
         "required": true
       }
     ],

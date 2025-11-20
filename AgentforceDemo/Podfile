@@ -7,10 +7,9 @@ target 'AgentforceDemo' do
   source 'https://cdn.cocoapods.org/'
   use_frameworks!
 
-  pod 'AgentforceSDK', :git => 'https://git.soma.salesforce.com/iOS/AgentforceSDK.git', :branch => 'df-demo3', :submodules => true
-  pod 'AgentforceService'
+  pod 'AgentforceSDK'
   pod 'Messaging-InApp-Core', '1.9.3-Experimental'
-  pod 'LiveKitClient'
+  pod 'LiveKitClient', '2.8.1'
 end
 
 post_install do |installer|

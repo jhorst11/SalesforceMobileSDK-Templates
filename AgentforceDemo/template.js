@@ -59,11 +59,11 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
     // Replace in files
     //
 
-    // app name
-    replaceInFiles(templateAppName, config.appname, [templatePodfile, templatePackageJsonFile, templateProjectFile, templateSchemeFile, templateEntitlementsFile]);
-
     // package name
     replaceInFiles(templatePackageName, config.packagename, [templateProjectFile, templateEntitlementsFile]);
+
+    // app name
+    replaceInFiles(templateAppName, config.appname, [templatePodfile, templatePackageJsonFile, templateProjectFile, templateSchemeFile, templateEntitlementsFile]);
 
     // org name
     replaceInFiles(templateOrganization, config.organization, [templateProjectFile]);
