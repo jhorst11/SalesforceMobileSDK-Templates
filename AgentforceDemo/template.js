@@ -82,7 +82,6 @@ function prepare(config, replaceInFiles, moveFile, removeFile) {
 
     // Inject template properties into Settings.swift
     if (templateProperties) {
-        debugger;
         var developerName = getTemplatePropertyValue(templateProperties.developerName);
         if (developerName) {
             replaceInFiles(templateDeveloperName, developerName, [templateSettingsFile]);
