@@ -63,35 +63,6 @@
       ]
     }
   ],
-  "templatePrerequisites": {
-    "steps": [
-      {
-        "step": "Discover your agent ID by navigating in Setup -> Quick Find 'Agentforce Agents' -> Select the agent -> Copy the Agent ID from the URL (eg. <instance_url>/lightning/setup/EinsteinCopilot/<AGENT_ID>/edit",
-        "required": true
-      },
-      {
-        "step": "If an enhanced in-app chat deployment is configured, extract the ES developer name, organization ID, and API URL from the deployment configuration by navigating in Setup -> Quick Find 'Embedded Service Deployments' -> Select the deployment -> Mobile Configuration -> Click 'Get Code File'",
-        "required": true
-      }
-    ],
-    "templateProperties": {
-      "developerName": {
-        "value": "",
-        "required": true,
-        "description": "ES developer name from your enhanced in-app chat deployment configuration"
-      },
-      "organizationId": {
-        "value": "",
-        "required": true,
-        "description": "Organization ID from your enhanced in-app chat deployment configuration"
-      },
-      "apiURL": {
-        "value": "",
-        "required": true,
-        "description": "API URL from your enhanced in-app chat deployment configuration"
-      }
-    }
-  },
   "properties": {
     "templatePrerequisites": {
       "properties": {
